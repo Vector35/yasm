@@ -74,8 +74,8 @@ IF (NOT YASM_LIBRARY)
     MESSAGE(FATAL_ERROR "Could not find yasm library")
 ENDIF (NOT YASM_LIBRARY)
 
-INCLUDE(FindPythonInterp)
-
+INCLUDE(FindPython)
+set(PYTHON_EXECUTABLE ${Python_EXECUTABLE})
 IF (NOT PYTHON_EXECUTABLE)
     MESSAGE(FATAL_ERROR "Could not find Python executable")
 ENDIF (NOT PYTHON_EXECUTABLE)
