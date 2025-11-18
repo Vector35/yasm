@@ -45,7 +45,7 @@ int
 parse_cmdline(int argc, char **argv, opt_option *options, size_t nopts,
               void (*print_error) (const char *fmt, ...))
 {
-    int errors = 0, warnings = 0;
+	int errors = 0;
     size_t i;
     int got_it;
 
@@ -105,7 +105,6 @@ parse_cmdline(int argc, char **argv, opt_option *options, size_t nopts,
                 if (!got_it) {
                     print_error(_("warning: unrecognized option `%s'"),
                                 argv[0]);
-                    warnings++;
                 }
             } else if (argv[0][1] == '\0') {   /* just -, is non-option */
                 if (not_an_option_handler(argv[0]))
@@ -143,7 +142,6 @@ parse_cmdline(int argc, char **argv, opt_option *options, size_t nopts,
                 if (!got_it) {
                     print_error(_("warning: unrecognized option `%s'"),
                                 argv[0]);
-                    warnings++;
                 }
             }
         } else {    /* not an option, then it should be a file or something */
